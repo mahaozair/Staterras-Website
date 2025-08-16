@@ -26,8 +26,8 @@ https://templatemo.com/tm-594-nexus-flow
             --border-color: rgba(229, 231, 235, 0.2);
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
-            --primary-cyan: #0059ff;
-            --primary-pink: #003aa5;
+            --primary-cyan: #00ccff;
+            --primary-pink: #00ccff;
         }
 
         body {
@@ -585,6 +585,9 @@ https://templatemo.com/tm-594-nexus-flow
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
         }
+        .nav-bottom .cyber-button {
+            transform: scale(0.75);
+        }
 
         /* Animation keyframes for mobile menu */
         @keyframes slideInLeft {
@@ -678,7 +681,7 @@ https://templatemo.com/tm-594-nexus-flow
         }
 
         .logo::before {
-            content: '>';
+            content: '';
             margin-right: 0.5rem;
             color: var(--primary-orange);
             transition: all 0.3s ease;
