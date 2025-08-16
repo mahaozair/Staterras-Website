@@ -1,2079 +1,748 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staterras | Pre-Terras - Bridging Real Assets with Crypto Yield</title>
-    <style>
-		html {
-            scroll-behavior: smooth;
-        }
-        /* Overall Style: Dark theme inspired by Iron Fish - minimalist, dark backgrounds, light text, blue accents. */
-body {
-            font-family: 'Inter', 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: 
-                linear-gradient(135deg, #0a0e1a 0%, #0d1117 30%, #161b22 60%, #0d1117 100%);
-            background-attachment: scroll;
-            color: #c9d1d9;
-            line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
-        }
+    <title>Staterras - The Future of Digital Asset Management</title>
+    <link href="templatemo-nexus-style.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!--
 
-        /* Global animated background overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at 20% 10%, rgba(88, 166, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 30%, rgba(40, 167, 69, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 40% 70%, rgba(111, 66, 193, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 90%, rgba(253, 126, 20, 0.04) 0%, transparent 50%);
-            animation: globalBackgroundShift 20s ease-in-out infinite;
-            pointer-events: none;
-            z-index: -1;
-        }
+TemplateMo 594 nexus flow
 
-        body::after {
-            content: '';
-            position: fixed;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            background: conic-gradient(from 0deg, 
-                transparent, 
-                rgba(88, 166, 255, 0.03), 
-                transparent, 
-                rgba(40, 167, 69, 0.02), 
-                transparent,
-                rgba(111, 66, 193, 0.025),
-                transparent);
-            animation: globalRotate 40s linear infinite;
-            pointer-events: none;
-            z-index: -1;
-        }
+https://templatemo.com/tm-594-nexus-flow
 
-        @keyframes globalBackgroundShift {
-            0%, 100% { 
-                opacity: 0.6;
-                transform: scale(1) translateY(0);
-            }
-            25% { 
-                opacity: 0.8;
-                transform: scale(1.02) translateY(-2vh);
-            }
-            50% { 
-                opacity: 0.7;
-                transform: scale(0.98) translateY(2vh);
-            }
-            75% { 
-                opacity: 0.9;
-                transform: scale(1.01) translateY(-1vh);
-            }
-        }
-
-        @keyframes globalRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-
-/* Hero Section: Full width and seamless integrated background */
-.hero {
-    background: 
-        radial-gradient(circle at 75% 50%, rgba(88, 166, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 25% 30%, rgba(56, 139, 253, 0.1) 0%, transparent 60%),
-        radial-gradient(circle at 80% 20%, rgba(88, 166, 255, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(56, 139, 253, 0.12) 0%, transparent 50%),
-        linear-gradient(135deg, #0a0e1a 0%, #0d1117 30%, #161b22 70%, #1c2128 100%);
-    color: #ffffff;
-    min-height: 100vh;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    /* Remove any max-width constraints */
-    max-width: none;
-}
-
-/* Seamless animated background overlay */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: #0d0e0f ;
-    animation: slowRotate 60s linear infinite, backgroundPulse 8s ease-in-out infinite;
-    z-index: 1;
-}
-
-/* Additional seamless overlay for depth */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #0d0e0f ;
-    animation: backgroundShift 20s ease-in-out infinite alternate;
-    z-index: 1;
-}
-
-/* Left Side - Content */
-.hero-content {
-    padding: 0 60px;
-    z-index: 2;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 24px;
-    background: linear-gradient(135deg, #ffffff 0%, #58a6ff 40%, #ffffff 70%, #58a6ff 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 300% 300%;
-    animation: gradientFlow 8s ease-in-out infinite, slideInLeft 1s ease-out;
-    line-height: 1.2;
-    text-align: left;
-    filter: drop-shadow(0 4px 8px rgba(88, 166, 255, 0.2));
-}
-
-.hero p {
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    margin-bottom: 48px;
-    color: rgba(201, 209, 217, 0.9);
-    line-height: 1.6;
-    animation: slideInLeft 1s ease-out 0.3s both;
-    text-align: left;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    animation: slideInLeft 1s ease-out 0.6s both;
-}
-
-.cta-button {
-    background-color: #58a6ff;
-    color: #0d1117;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    max-width: 280px;
-    position: relative;
-    overflow: hidden;
-}
-
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.cta-button:hover::before {
-    left: 100%;
-}
-
-.cta-button:hover {
-    background-color: #388bfd;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(88, 166, 255, 0.4);
-}
-
-.cta-button:first-child {
-    background: linear-gradient(135deg, #58a6ff 0%, #388bfd 100%);
-    color: #ffffff;
-    box-shadow: 0 8px 25px rgba(88, 166, 255, 0.3);
-}
-
-.cta-button:not(:first-child) {
-    background: rgba(88, 166, 255, 0.1);
-    color: #58a6ff;
-    border: 2px solid rgba(88, 166, 255, 0.3);
-    backdrop-filter: blur(10px);
-}
-
-.cta-button:not(:first-child):hover {
-    background: rgba(88, 166, 255, 0.2);
-    border-color: rgba(88, 166, 255, 0.6);
-    backdrop-filter: blur(15px);
-}
-
-/* Right Side - Keep globe visible, transparent box */
-.hero-visual {
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 2;
-    background: transparent;
-
-}
-
-/* Transparent container - no visible boundaries */
-.video-container {
-    width: 85%;
-    height: 75%;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: none;
-    animation: slideInRight 1s ease-out 0.8s both;
-    background: transparent;
-    border: none;
-}
-
-.seamless-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    opacity: 0.4;
-    mix-blend-mode: normal;
-    filter: none;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    height: 75%;
-    background: 
-        radial-gradient(circle at 50% 50%, rgba(88, 166, 255, 0.05) 0%, transparent 70%);
-    border-radius: 0;
-    pointer-events: none;
-    mask: radial-gradient(ellipse at center, black 40%, transparent 80%);
-    -webkit-mask: radial-gradient(ellipse at center, black 40%, transparent 80%);
-}
-
-
-/* Enhanced floating elements for seamless feel */
-.floating-elements {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.floating-circle {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(56, 139, 253, 0.08));
-    animation: floatSeamless 12s ease-in-out infinite;
-    backdrop-filter: blur(2px);
-}
-
-.floating-circle:nth-child(1) {
-    width: 80px;
-    height: 80px;
-    top: 20%;
-    right: 20%;
-    animation-delay: 0s;
-}
-
-.floating-circle:nth-child(2) {
-    width: 60px;
-    height: 60px;
-    bottom: 30%;
-    left: 15%;
-    animation-delay: 4s;
-}
-
-.floating-circle:nth-child(3) {
-    width: 40px;
-    height: 40px;
-    top: 60%;
-    right: 35%;
-    animation-delay: 8s;
-}
-
-.floating-circle:nth-child(4) {
-    width: 50px;
-    height: 50px;
-    top: 10%;
-    left: 45%;
-    animation-delay: 2s;
-}
-
-.floating-circle:nth-child(5) {
-    width: 35px;
-    height: 35px;
-    bottom: 15%;
-    right: 60%;
-    animation-delay: 6s;
-}
-
-/* Enhanced Animations */
-@keyframes gradientFlow {
-    0%, 100% { 
-        background-position: 0% 50%; 
-        filter: drop-shadow(0 4px 8px rgba(88, 166, 255, 0.2));
-    }
-    50% { 
-        background-position: 100% 50%; 
-        filter: drop-shadow(0 6px 12px rgba(88, 166, 255, 0.3));
-    }
-}
-
-@keyframes slowRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes backgroundPulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
-
-@keyframes backgroundShift {
-    0% { 
-        background-position: 0% 0%; 
-        opacity: 0.8;
-    }
-    100% { 
-        background-position: 100% 100%; 
-        opacity: 1;
-    }
-}
-
-@keyframes overlayShift {
-    0% { 
-        background-position: 0% 0%;
-        opacity: 0.9;
-    }
-    100% { 
-        background-position: 100% 100%;
-        opacity: 0.6;
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes floatSeamless {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg) scale(1);
-        opacity: 0.6;
-    }
-    33% {
-        transform: translateY(-20px) rotate(120deg) scale(1.1);
-        opacity: 0.8;
-    }
-    66% {
-        transform: translateY(10px) rotate(240deg) scale(0.9);
-        opacity: 0.7;
-    }
-}
-
-/* Mobile Responsive for Hero */
-@media (max-width: 1024px) {
-    .hero {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        min-height: 100vh;
-    }
-
-    .hero-content {
-        padding: 40px 20px;
-        text-align: center;
-        order: 1;
-    }
-
-    .hero h1 {
-        text-align: center;
-    }
-
-    .hero p {
-        text-align: center;
-        max-width: 600px;
-        margin: 0 auto 48px;
-    }
-
-    .hero-buttons {
-        align-items: center;
-    }
-
-    .hero-visual {
-        height: 50vh;
-        order: 2;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        padding: 20px;
-    }
-
-    .hero-visual {
-        height: 40vh;
-    }
-
-    /* Replace video with seamless gradient background on mobile */
-    .seamless-video {
-        display: none;
-    }
-
-    .video-container {
-        background: 
-            radial-gradient(circle at 60% 40%, rgba(88, 166, 255, 0.2) 0%, transparent 50%),
-            radial-gradient(circle at 30% 70%, rgba(56, 139, 253, 0.15) 0%, transparent 60%),
-            linear-gradient(135deg, #58a6ff 0%, #388bfd 50%, #1f6feb 100%);
-        animation: mobileBackgroundFlow 10s ease-in-out infinite alternate;
-    }
-
-    @keyframes mobileBackgroundFlow {
-        0% { 
-            background-position: 0% 0%;
-            opacity: 0.8;
-        }
-        100% { 
-            background-position: 100% 100%;
-            opacity: 1;
-        }
-    }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-    .hero h1,
-    .hero p,
-    .hero-buttons,
-    .video-container,
-    .hero::before,
-    .hero::after,
-    .video-overlay,
-    .floating-circle {
-        animation: none;
-    }
-
-    .seamless-video {
-        filter: none;
-    }
-}
-
-
-        /* Main Content Sections: Enhanced with animations */
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-bottom: 40px;
-            position: relative;
-			display: flexbox;
-			justify-content: center;
-			align-items: center;
-        }
-
-        /* Add floating particles to sections */
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(2px 2px at 20% 30%, rgba(88, 166, 255, 0.4), transparent),
-                radial-gradient(2px 2px at 40% 70%, rgba(40, 167, 69, 0.3), transparent),
-                radial-gradient(1px 1px at 90% 40%, rgba(111, 66, 193, 0.4), transparent),
-                radial-gradient(1px 1px at 10% 80%, rgba(253, 126, 20, 0.3), transparent),
-                radial-gradient(2px 2px at 70% 10%, rgba(88, 166, 255, 0.2), transparent);
-            background-size: 400px 400px, 600px 600px, 300px 300px, 500px 500px, 700px 700px;
-            animation: floatParticles 25s linear infinite;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        @keyframes floatParticles {
-            0% {
-                background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-            }
-            100% {
-                background-position: 100% 100%, -100% 100%, 100% -100%, -100% -100%, 100% 100%;
-            }
-        }
-
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #ffffff;
-            position: relative;
-            z-index: 10;
-            background: linear-gradient(135deg, #ffffff 0%, #58a6ff 50%, #ffffff 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradientShift 8s ease-in-out infinite;
-        }
-
-        section h3 {
-            font-size: 28px;
-            margin: 40px 0 20px;
-            color: #ffffff;
-            position: relative;
-            z-index: 10;
-        }
-
-        section p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Feature Layout: Mimic MetaMask with left/right cards and center caption */
-        .feature-layout {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            margin: 40px 0;
-        }
-
-        .left-cards, .right-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 30%;
-        }
-
-        .middle-caption {
-            text-align: center;
-            width: 40%;
-            padding: 0 20px;
-        }
-
-        .middle-caption h2 {
-            font-size: 42px;
-            font-weight: bold;
-            color: #58a6ff;
-            margin: 0;
-            line-height: 1.1;
-        }
-
-        .middle-caption .icon {
-            font-size: 60px; /* Placeholder icon */
-            margin-top: 10px;
-        }
-
-        .feature-card {
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid #21262d;
-            text-align: left;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            pointer-events: all;
-            background: rgba(22, 27, 34, 0.8);
-            /* backdrop-filter: blur(4px); */
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Add subtle glow animation to cards */
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-            z-index: 1;
-        }
-
-        .feature-card:hover::before {
-            left: 100%;
-        }
-
-        .feature-card * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .feature-layout:hover .feature-card {
-            transform: scale(0.95);
-            opacity: 0.7;
-            transition: all 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: scale(1.05) !important;
-            opacity: 1 !important;
-            z-index: 10;
-            box-shadow: 
-                0 8px 32px rgba(88, 166, 255, 0.4),
-                0 0 0 1px rgba(88, 166, 255, 0.2);
-            transition: all 0.4s ease;
-        }
-
-        .feature-card h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-
-        .feature-card p {
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 0.5s ease, max-height 0.5s ease;
-            margin-top: 10px;
-            color: #c9d1d9; /* Consistent text color */
-        }
-
-        .feature-card:hover p {
-            opacity: 1;
-            max-height: 500px; /* Increased to avoid cutoff; adjust if needed */
-        }
-
-        /* Assign colors to cards in About section */
-         #about .left-cards .feature-card:nth-child(1) {
-            background: linear-gradient(135deg, #161b22 0%, rgba(111, 66, 193, 0.15) 100%);
-            border: 1px solid rgba(111, 66, 193, 0.3);
-        }
-
-        #about .left-cards .feature-card:nth-child(1):hover {
-            box-shadow: 0 8px 24px rgba(111, 66, 193, 0.4);
-        }
-
-        #about .left-cards .feature-card:nth-child(2) {
-            background: linear-gradient(135deg, #161b22 0%, rgba(88, 166, 255, 0.15) 100%);
-            border: 1px solid rgba(88, 166, 255, 0.3);
-        }
-
-        #about .left-cards .feature-card:nth-child(2):hover {
-            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.4);
-        }
-
-        #about .right-cards .feature-card:nth-child(1) {
-            background: linear-gradient(135deg, #161b22 0%, rgba(40, 167, 69, 0.15) 100%);
-            border: 1px solid rgba(40, 167, 69, 0.3);
-        }
-
-        #about .right-cards .feature-card:nth-child(1):hover {
-            box-shadow: 0 8px 24px rgba(40, 167, 69, 0.4);
-        }
-
-        #about .right-cards .feature-card:nth-child(2) {
-            background: linear-gradient(135deg, #161b22 0%, rgba(253, 126, 20, 0.15) 100%);
-            border: 1px solid rgba(253, 126, 20, 0.3);
-        }
-
-        #about .right-cards .feature-card:nth-child(2):hover {
-            box-shadow: 0 8px 24px rgba(253, 126, 20, 0.4);
-        }
-
-        /* Invest section cards with subtle colored accents */
-        #invest .left-cards .feature-card:nth-child(1) {
-            background: linear-gradient(135deg, #161b22 0%, rgba(111, 66, 193, 0.15) 100%);
-            border: 1px solid rgba(111, 66, 193, 0.3);
-        }
-
-        #invest .left-cards .feature-card:nth-child(1):hover {
-            box-shadow: 0 8px 24px rgba(111, 66, 193, 0.4);
-        }
-
-        #invest .left-cards .feature-card:nth-child(2) {
-            background: linear-gradient(135deg, #161b22 0%, rgba(88, 166, 255, 0.15) 100%);
-            border: 1px solid rgba(88, 166, 255, 0.3);
-        }
-
-        #invest .left-cards .feature-card:nth-child(2):hover {
-            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.4);
-        }
-
-        #invest .right-cards .feature-card:nth-child(1) {
-            background: linear-gradient(135deg, #161b22 0%, rgba(40, 167, 69, 0.15) 100%);
-            border: 1px solid rgba(40, 167, 69, 0.3);
-        }
-
-        #invest .right-cards .feature-card:nth-child(1):hover {
-            box-shadow: 0 8px 24px rgba(40, 167, 69, 0.4);
-        }
-
-        #invest .right-cards .feature-card:nth-child(2) {
-            background: linear-gradient(135deg, #161b22 0%, rgba(253, 126, 20, 0.15) 100%);
-            border: 1px solid rgba(253, 126, 20, 0.3);
-        }
-
-        #invest .right-cards .feature-card:nth-child(2):hover {
-            box-shadow: 0 8px 24px rgba(253, 126, 20, 0.4);
-        }
-
-        /* Initial Load Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animated-card {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .animated-card:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .animated-card:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .animated-card:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        .animated-card:nth-child(4) {
-            animation-delay: 0.8s;
-        }
-
-        /* FAQ Accordion Style - Enhanced */
-        .faq-item {
-            background: rgba(22, 27, 34, 0.8);
-            /* backdrop-filter: blur(4px); */
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border: 1px solid rgba(33, 38, 45, 0.8);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .faq-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-            z-index: 1;
-        }
-
-        .faq-item:hover::before {
-            left: 100%;
-        }
-
-        .faq-item:hover {
-            border-color: rgba(88, 166, 255, 0.3);
-            box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);
-        }
-
-        .faq-question {
-            padding: 15px;
-            cursor: pointer;
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
-            transition: color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            color: #58a6ff;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            padding: 0 15px;
-            transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-            border-top: 1px solid rgba(33, 38, 45, 0.8);
-            position: relative;
-            z-index: 2;
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: 500px;
-            opacity: 1;
-            padding: 15px;
-        }
-
-        /* Performance Section - Enhanced */
-        .performance-section {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .performance-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at 50% 0%, rgba(88, 166, 255, 0.1) 0%, transparent 70%);
-            /* animation: sectionPulse 12s ease-in-out infinite; */
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .card {
-            flex: 1;
-            background: rgba(22, 27, 34, 0.8);
-            /* backdrop-filter: blur(4px); */
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0, 191, 255, 0.15);
-            box-sizing: border-box;
-            min-width: 0;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            animation: cardGlow 8s ease-in-out infinite;
-        }
-
-        .card:nth-child(1) { animation-delay: 0s; }
-        .card:nth-child(2) { animation-delay: 2.6s; }
-        .card:nth-child(3) { animation-delay: 5.2s; }
-
-        @keyframes cardGlow {
-            0%, 100% { 
-                box-shadow: 0 0 12px rgba(0, 191, 255, 0.15);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 0 20px rgba(0, 191, 255, 0.25);
-                transform: scale(1.02);
-            }
-        }
-
-        .card:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
-        }
-
-        /* Alternating section background */
-        /* section:nth-child(even) {
-            background-color: #0d1117;
-        } */
-        /* cards */
-        .cards-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-    }
-
-    .cards-row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 30px;
-  gap: 20px;
-}
-    /* .card {
-      background-color: #161b22;
-      padding: 20px;
-      border-radius: 12px;
-      width: 280px;
-      box-shadow: 0 0 12px rgba(0, 191, 255, 0.2);
-    } */
-     .card {
-  flex: 1;
-  background-color:#161b22;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 191, 255, 0.15);
-  box-sizing: border-box;
-  min-width: 0; /* helps prevent overflow */
-}
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #ccc;
-    }
-
-    .card .number {
-      font-size: 1.8rem;
-      color: #00BFFF;
-      font-weight: 600;
-    }
-
-        /* Footer */
-        footer {
-            background-color: #0d1117;
-            border-top: 1px solid #21262d;
-            padding: 20px;
-            text-align: center;
-            font-size: 14px;
-            color: #8b949e;
-        }
-
-        footer a {
-            color: #58a6ff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .social-icons {
-            margin-top: 10px;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-        }
-
-		/* How It Works Section - Enhanced */
-        /* How It Works Section - Enhanced and Centered */
-        .how-it-works {
-            background: transparent;
-            padding: 60px 40px;
-            margin: 40px auto;
-            border-radius: 12px;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            max-width: 1200px;
-            text-align: center;
-        }
-
-        .how-it-works::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        @keyframes sectionPulse {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.02); }
-        }
-
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            position: relative;
-            z-index: 10;
-            justify-items: center;
-        }
-
-        .step {
-            text-align: center;
-            padding: 25px 20px;
-            position: relative;
-            animation: stepFloat 6s ease-in-out infinite;
-            background: rgba(13, 17, 23, 0.6);
-            border-radius: 12px;
-            border: 1px solid rgba(33, 38, 45, 0.8);
-            transition: all 0.4s ease;
-            max-width: 320px;
-            width: 100%;
-        }
-
-        .step:nth-child(odd) {
-            animation-delay: 0s;
-        }
-
-        .step:nth-child(even) {
-            animation-delay: 3s;
-        }
-
-        .step:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 
-                0 10px 25px rgba(88, 166, 255, 0.3),
-                0 0 0 1px rgba(88, 166, 255, 0.2);
-            border-color: rgba(88, 166, 255, 0.4);
-        }
-
-
-        .step-number {
-            background: linear-gradient(135deg, #58a6ff 0%, #388bfd 100%);
-            color: #0d1117;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 20px;
-            margin: 0 auto 20px;
-            box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
-        }
-
-        @keyframes numberPulse {
-            0%, 100% { box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3); }
-            50% { box-shadow: 0 6px 20px rgba(88, 166, 255, 0.5); }
-        }
-
-        .step h4 {
-            color: #58a6ff;
-            font-size: 18px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .step p {
-            color: #c9d1d9;
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .step-arrow {
-            display: none; /* Remove arrows in grid layout */
-        }
-
-/* Header: Enhanced with backdrop blur */
-header {
-    background: rgba(13, 17, 23, 0.9);
-    /* backdrop-filter: blur(10px); */
-    border-bottom: 1px solid rgba(33, 38, 45, 0.8);
-    padding: 12px 24px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Inter', sans-serif;
-    transition: all 0.3s ease;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        rgba(88, 166, 255, 0.05) 0%, 
-        transparent 50%, 
-        rgba(88, 166, 255, 0.05) 100%);
-    animation: headerGlow 10s ease-in-out infinite;
-    pointer-events: none;
-    z-index: -1;
-}
-
-@keyframes headerGlow {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.8; }
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 600;
-    color: #58a6ff;
-    white-space: nowrap;
-	margin-right: 2px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-nav a {
-    text-decoration: none;
-    color: #c9d1d9;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 8px 8px;
-    transition: color 0.2s ease-in-out;
-}
-
-nav a:hover {
-    color: #58a6ff;
-}
-
-/* nav buttons */
-.nav-button {
-    background-color: #58a6ff;
-    color:#0d1117 !important;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-.nav-button:hover {
-    background-color: #58a6ff;
-}
-
-.cta-button {
-            background-color: #58a6ff;
-            color: #0d1117;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            text-decoration: none;
-            cursor: pointer;
-            margin: 0 10px;
-            display: inline-block;
-        }
-
-.cta-button:hover {
-	background-color: #388bfd;
-}
-
-/* Dropdown Menu Styles */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #161b22;
-    min-width: 180px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    border: 1px solid #21262d;
-    border-radius: 6px;
-    top: 100%;
-    left: 0;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px 14px;
-    font-size: 14px;
-    color: #c9d1d9;
-}
-
-.dropdown-content a:hover {
-    background-color: #21262d;
-    color: #58a6ff;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    nav ul {
-        gap: 10px;
-        justify-content: flex-end;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
-    nav a {
-        font-size: 13px;
-        padding: 6px 8px;
-    }
-
-    .dropdown-content {
-        min-width: 160px;
-    }
-
-    .feature-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .left-cards, .right-cards, .middle-caption {
-        width: 100%;
-    }
-
-    .middle-caption {
-        order: -1;
-    }
-
-    .globe-container {
-        width: 500px;
-        height: 500px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-
-        font-size: 20px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .hero-buttons .cta-button {
-        margin: 0;
-        width: 200px;
-        text-align: center;
-    }
-
-    .steps-container {
-        flex-direction: column;
-    }
-
-    .step-arrow {
-        display: none;
-    }
-
-    .globe-container {
-        width: 400px;
-        height: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    .globe-container {
-        width: 300px;
-        height: 300px;
-    }
-
-    .hero {
-        padding: 100px 20px;
-    }
-}
- /* Core Benefits Section - Horizontal Bars */
-        #benefits {
-            padding: 80px 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .horizontal-benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin-top: 40px;
-            position: relative;
-            z-index: 20;
-        }
-
-        .benefit-bar {
-            background: rgba(22, 27, 34, 0.9);
-            border: 1px solid rgba(33, 38, 45, 0.8);
-            border-radius: 12px;
-            padding: 30px 40px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            cursor: pointer;
-            backdrop-filter: blur(4px);
-            transform-origin: center;
-        }
-
-        .benefit-bar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.1), transparent);
-            transition: left 0.6s ease;
-            z-index: 1;
-        }
-
-        .benefit-bar:hover::before {
-            left: 100%;
-        }
-
-        .benefit-bar:hover {
-            transform: translateZ(20px) scale(1.02);
-            box-shadow: 
-                0 15px 40px rgba(88, 166, 255, 0.3),
-                0 0 0 1px rgba(88, 166, 255, 0.2);
-            border-color: rgba(88, 166, 255, 0.4);
-            z-index: 30;
-        }
-
-        /* Overlapping effect */
-        .benefit-bar:nth-child(1) { margin-bottom: -15px; z-index: 24; }
-        .benefit-bar:nth-child(2) { margin-bottom: -15px; z-index: 23; }
-        .benefit-bar:nth-child(3) { margin-bottom: -15px; z-index: 22; }
-        .benefit-bar:nth-child(4) { z-index: 21; }
-
-        .benefit-bar h3 {
-            font-size: 24px;
-            font-weight: 600;
-            color: #58a6ff;
-            margin-bottom: 12px;
-            position: relative;
-            z-index: 2;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-bar p {
-            font-size: 16px;
-            color: #c9d1d9;
-            margin: 0;
-            position: relative;
-            z-index: 2;
-            line-height: 1.5;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-bar:hover h3 {
-            color: #ffffff;
-            text-shadow: 0 2px 8px rgba(88, 166, 255, 0.4);
-        }
-
-        .benefit-bar:hover p {
-            color: #ffffff;
-        }
-
-        /* Add unique gradient backgrounds for each bar */
-        .benefit-bar:nth-child(1) {
-            background: linear-gradient(135deg, rgba(22, 27, 34, 0.9) 0%, rgba(88, 166, 255, 0.15) 100%);
-        }
-
-        .benefit-bar:nth-child(2) {
-            background: linear-gradient(135deg, rgba(22, 27, 34, 0.9) 0%, rgba(40, 167, 69, 0.15) 100%);
-        }
-
-        .benefit-bar:nth-child(3) {
-            background: linear-gradient(135deg, rgba(22, 27, 34, 0.9) 0%, rgba(111, 66, 193, 0.15) 100%);
-        }
-
-        .benefit-bar:nth-child(4) {
-            background: linear-gradient(135deg, rgba(22, 27, 34, 0.9) 0%, rgba(253, 126, 20, 0.15) 100%);
-        }
-
-        /* Responsive for benefit bars */
-        @media (max-width: 768px) {
-            .benefit-bar {
-                padding: 25px 20px;
-                margin-bottom: -10px !important;
-            }
-
-            .benefit-bar h3 {
-                font-size: 20px;
-            }
-
-            .benefit-bar p {
-                font-size: 14px;
-            }
-        }
-		.how-to-buy-section {
-            background:transparent;
-            padding: 60px 40px;
-            margin: 40px auto;
-            border-radius: 12px;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            max-width: 1200px;
-            text-align: center;
-        }
-
-        .how-to-buy-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .buy-step:hover::before {
-			background: rgba(13, 17, 23, 0.6);
-            left: 100%;
-        }
-
-        .buy-step:hover {
-			background: rgba(13, 17, 23, 0.6);
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 
-                0 12px 25px rgba(88, 166, 255, 0.4),
-                0 0 0 1px rgba(88, 166, 255, 0.2);
-        }
-
-        .buy-step-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #58a6ff 0%, #388bfd 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 40px;
-            color: #0d1117;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-
-        @keyframes iconPulse {
-            0%, 100% { 
-                box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 6px 20px rgba(88, 166, 255, 0.5);
-                transform: scale(1.05);
-            }
-        }
-
-        .buy-step h3 {
-            color: #58a6ff;
-            margin-bottom: 15px;
-            font-size: 24px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .buy-step p {
-            color: #c9d1d9;
-            line-height: 1.6;
-            margin: 0;
-            position: relative;
-            z-index: 2;
-        }
-		/* How to Buy Section */
-
-        .buy-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .buy-step {
-            text-align: center;
-            padding: 30px 20px;
-            background: rgba(13, 17, 23, 0.6);
-            /* backdrop-filter: blur(4px); */
-            border-radius: 12px;
-            border: none;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            animation: cardFloat 8s ease-in-out infinite;
-        }
-
-        .buy-step:nth-child(1) { animation-delay: 0s; }
-        .buy-step:nth-child(2) { animation-delay: 1.3s; }
-        .buy-step:nth-child(3) { animation-delay: 2.6s; }
-        .buy-step:nth-child(4) { animation-delay: 3.9s; }
-        .buy-step:nth-child(5) { animation-delay: 5.2s; }
-        .buy-step:nth-child(6) { animation-delay: 6.5s; }
-
-        /* @keyframes cardFloat {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-8px) scale(1.02); }
-        } */
-
-        .buy-step::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background:transparent;
-            transition: left 0.6s ease;
-            z-index: 1;
-        }
-
-        .buy-step-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #58a6ff 0%, #388bfd 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 40px;
-            color: #0d1117;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
-            /* animation: iconPulse 5s ease-in-out infinite; */
-            position: relative;
-            z-index: 2;
-        }
-
-        @keyframes iconPulse {
-            0%, 100% { 
-                box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 6px 20px rgba(88, 166, 255, 0.5);
-                transform: scale(1.05);
-            }
-        }
-
-    </style>
+-->
 </head>
-<body>
+<body id="top">
+    <!-- Enhanced Background Elements -->
+    <div class="cyber-bg">
+        <div class="cyber-gradient"></div>
+        <div class="matrix-rain" id="matrixRain"></div>
+    </div>
+    
+    <div class="particles" id="particlesContainer"></div>
+    
+    <div class="data-streams" id="dataStreams"></div>
+    
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <div class="grid-overlay">
+        <div class="grid-lines"></div>
+        <div class="grid-glow"></div>
+    </div>
+    
+    <div class="scanlines"></div>
+    <div class="noise-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#top" class="logo">Staterras</a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Core Benefits</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Token Plans</a></li>
+                <li><a href="#how-to-buy">How to Buy</a></li>
+                <li><a href="#stats">Performance</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-bottom">
+                <a href="#" class="cyber-button">Download Whitepaper</a>
+            </div>
+            <button class="mobile-menu-button" id="mobileMenuBtn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">Staterras</div>
-        <nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#top" class="mobile-menu-logo">Staterras</a>
+            <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        </div>
+        <div class="mobile-menu-cta">
+            <a href="#" class="cyber-button">Download Whitepaper</a>
+        </div>
+        <nav class="mobile-menu-nav">
             <ul>
-                <li><a href="#home" onclick="showSection('home')">Home</a></li>
-                <li><a href="#about" onclick="showSection('about')">About Us</a></li>
-                <li class="dropdown">
-                    <a href="#" onclick="showSection('tokenomics')">Token & Investments</a>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="showSection('mechanics')">Pre-Terras Mechanics</a>
-                        <a href="#" onclick="showSection('allocations')">Allocations Pie Chart</a>
-                        <a href="#" onclick="showSection('tokenomics')">Tokenomics</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" onclick="showSection('transparency')">Transparency & Reports</a>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="showSection('financial')">Financial Statements</a>
-                        <a href="#" onclick="showSection('nav-dashboard')">NAV Dashboard</a>
-                        <a href="#" onclick="showSection('audits')">Audits</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" onclick="showSection('governance')">Governance & Community</a>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="showSection('leaderboards')">Leaderboards</a>
-                        <a href="#" onclick="showSection('forum')">Forum</a>
-                        <a href="#" onclick="showSection('dao-voting')">DAO Voting</a>
-                    </div>
-                </li>
-                <li><a href="#how-to-buy" onclick="showSection('how-to-buy')">How To Buy</a></li>
-                <li><a href="#faq" onclick="showSection('faq')">FAQ</a></li>
-				<li><a href="White Paper Staterras.pdf" target="_blank" class="nav-button">Download Whitepaper</a></li>
-                <li><a href="#" class="nav-button" onclick="joinCommunity()">Join Community</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Core Benefits</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Token Plans</a></li>
+                <li><a href="#how-to-buy">How to Buy</a></li>
+                <li><a href="#stats">Performance</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </header>
-
-
-    <!-- Hero Section (Home Page) -->
-    <section id="home" class="hero" style="width: 100%;">
-        <div class="hero-content">
-			<h1>Start-Era : The Deflationary Utility Token Powering Community-Driven Wealth</h1>
-			<p>Build our ecosystem, hit KPIs and unlock pathways to future phases. No securities, just transparent engagement.</p>
-		</div>
-
-    <!-- Right Side - Seamless Video Animation -->
-    <div class="hero-visual">
-        <div class="video-container">
-            <video class="seamless-video" autoplay muted loop playsinline>
-                <!-- Replace with your actual video file -->
-                <!-- <source src="vecteezy_abstract-background-with-rotation-of-light-earth-globe_2274493.mp4" type="video/mp4"> -->
-                <source src="earth-small.mp4" type="video/webm">
-                <!-- Fallback content -->
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay"></div>
-        </div>
     </div>
-    </section>
 
-    <!-- Key Benefits Section (Home Page Continued) -->
-    <section id="benefits">
-        <h2>Core Benefits</h2>
-        <div class="horizontal-benefits">
-            <div class="benefit-bar">
-                <h3>Community Building and Engagement</h3>
-                <p>Start-Era acts as your entry ticket to the Staterras ecosystem, rewarding early supporters, influencers, and contributors with airdrops and participation perks</p>
-            </div>
-            
-            <div class="benefit-bar">
-                <h3>Deflationary Value Mechanism</h3>
-                <p>Leaderboard system for early adopters with exclusive discounted equity opportunities at $20M valuation.</p>
-            </div>
-            <div class="benefit-bar">
-                <h3>Liquidity and Trading Stability</h3>
-                <p>100 M tokens are locked in a Uniswap V3 liquidity pool ensuring smooth trading with low slippage. All swap proceeds stay locked, building trust and a strong foundation for future phases.
-</p>
-            </div>
-            <div class="benefit-bar">
-                <h3>Pathway to Future Rewards</h3>
-                <p>Holders can vote on post-burn options or become top performers of community challenges and can earn rewards, aligning your early involvement with long-term wealth creation.
-</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                <span class="hero-nexus">START</span><span class="hero-flow">-ERA</span>
+            </h1>
+            <p class="hero-subtitle">The Deflationary Utility Token Powering Community-Driven Wealth. Build our ecosystem, hit KPIs and unlock pathways to future phases.</p>
+            <div class="hero-buttons">
+                <a href="#how-to-buy" class="btn-primary">Buy Pre-Terras</a>
+                <a href="#" class="btn-secondary">Join Community</a>
             </div>
         </div>
     </section>
 
-
-
-<!-- How It Works -->
-        <section class="how-it-works">
-            <h2>How Staterras Works</h2>
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Raise Funds</h4>
-                    <p>Collect investments through Pre-Terras token sale</p>
-                    <div class="step-arrow">→</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h4>Buy & Stake ETH</h4>
-                    <p>Convert funds to ETH and stake for base yields</p>
-                    <div class="step-arrow">→</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Apply Leverage</h4>
-                    <p>Use 50% LTV to amplify exposure 1.25-1.75x</p>
-                    <div class="step-arrow">→</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h4>Strategic Allocation</h4>
-                    <p>Deploy across DeFi, hedging, and RWA opportunities</p>
-                    <div class="step-arrow">→</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h4>Generate Returns</h4>
-                    <p>Earn from multiple income streams and capital appreciation</p>
-                    <div class="step-arrow">→</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <h4>Execute Buybacks</h4>
-                    <p>Maintain >$1 NAV through strategic token buybacks</p>
-                </div>
+    <!-- About Section -->
+    <section class="features fade-up" id="about">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">About Staterras</h2>
+                <p class="section-subtitle">Empowering wealth creation by bridging blockchain and real-world assets with trust, transparency, and technology</p>
             </div>
-        </section>
-
-    <!-- About Pre-Terras Section with Catchy Center Title -->
-<!-- About Pre-Terras Section with Catchy Center Title -->
-<section id="about">
-    <div class="feature-layout">
-        <div class="left-cards">
-            <div class="feature-card animated-card">
-                <h3>Mission</h3>
-                <p>Staterras empowers wealth creation by bridging blockchain and RWAs with trust, transparency, and technology. We offer ETH staking, diversified income strategies, on-chain reporting, and incentive-based community growth, scaling through compliant licensing in UAE, Canada, USA, and Switzerland.</p>
-            </div>
-            <div class="feature-card animated-card">
-                <h3>Our Story</h3>
-                <p>Founded in 2025 to address DeFi volatility and traditional finance barriers, we launched Start-Era utility tokens with deflationary burns and community airdrops. Phase 2 adds a $25M ETH vault and Pre-Staterras rewards, leading to licensed equity and AuM-linked tokens targeting $100M in RWAs like real estate and trade finance.</p>
-            </div>
-        </div>
-        <div class="middle-caption">
-            <h2>About<br>Staterras</h2>
-            <div class="icon"></div>
-        </div>
-        <div class="right-cards">
-            <div class="feature-card animated-card">
-                <h3>Values</h3>
-                <p>On-chain audits for transparency, community-first engagement with rewards, compliance to keep utility tokens non-securities until licensed, sustainability via deflationary mechanics and leveraged ETH, and inclusivity for global participation.</p>
-            </div>
-            <div class="feature-card animated-card">
-                <h3>Competitive Edge</h3>
-                <p>We merge community and regulation through phased growth, hybrid ETH-RWA strategies, milestone-based issuance, and on-chain accountability. Contributors earn rewards convertible to equity, enabling scalability across multiple jurisdictions.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    
-    <!-- <input type="number" id="amount" placeholder="Enter token amount (e.g. 10)" />
-    <button onclick="buyToken()">Buy Token</button> -->
-    <!-- Add this section where you want the token purchase to appear -->
-<div id="how-to-buy" class="page-section">
-        <section class="how-to-buy-section">
-            <h2>How to Buy Pre-Terras</h2>
-            <p style="text-align: center; font-size: 18px; margin-bottom: 40px; color: #c9d1d9;">
-                Follow these simple steps to purchase Pre-Terras and start earning from real estate and crypto yields.
-            </p>
             
-            <div class="buy-steps">
-                <div class="buy-step">
-                    <div class="buy-step-icon">1</div>
-                    <h3>Create a Wallet</h3>
-                    <p>Download MetaMask or your wallet of choice from the app store or Google Play Store for free. Desktop users can download the Google Chrome extension by going to metamask.io.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>Staterras empowers wealth creation by bridging blockchain and RWAs with trust, transparency, and technology. We offer ETH staking, diversified income strategies, on-chain reporting, and incentive-based community growth.</p>
                 </div>
                 
-                <div class="buy-step">
-                    <div class="buy-step-icon">2</div>
-                    <h3>Get Some ETH</h3>
-                    <p>Have ETH in your wallet to swap for Pre-Terras. If you don't have any ETH, you can buy directly on MetaMask, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+                <!-- <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Our Story</h3>
+                    <p>Founded in 2025 to address DeFi volatility and traditional finance barriers. We launched Start-Era utility tokens with deflationary burns and community airdrops, leading to licensed equity and AuM-linked tokens targeting $100M in RWAs.</p>
+                </div> -->
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>On-chain audits for transparency, community-first engagement with rewards, compliance to keep utility tokens non-securities until licensed, and sustainability via deflationary mechanics and leveraged ETH.</p>
                 </div>
                 
-                <div class="buy-step">
-                    <div class="buy-step-icon">3</div>
-                    <h3>Go to Uniswap</h3>
-                    <p>Connect to Uniswap by going to app.uniswap.org in Google Chrome or on the browser inside your MetaMask app. Connect your wallet and paste the Pre-Terras contract address into Uniswap.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Competitive Edge</h3>
+                    <p>We merge community and regulation through phased growth, hybrid ETH-RWA strategies, milestone-based issuance, and on-chain accountability. Contributors earn rewards convertible to equity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Benefits Section -->
+    <section class="features fade-up" id="features">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">Core Benefits</h2>
+                <p class="section-subtitle">Unlock the power of community-driven wealth creation and deflationary tokenomics</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building</h3>
+                    <p>Start-Era acts as your entry ticket to the Staterras ecosystem, rewarding early supporters, influencers, and contributors with airdrops and participation perks.</p>
                 </div>
                 
-                <div class="buy-step">
-                    <div class="buy-step-icon">4</div>
-                    <h3>Swap ETH for Pre-Terras</h3>
-                    <p>Exchange your ETH for Pre-Terras. Set your slippage tolerance to 2-5% to ensure the transaction goes through smoothly. Confirm the transaction in your wallet when prompted.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Deflationary Mechanism</h3>
+                    <p>Leaderboard system for early adopters with exclusive discounted equity opportunities at $20M valuation through strategic token burns.</p>
                 </div>
                 
-                <div class="buy-step">
-                    <div class="buy-step-icon">5</div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Trading Stability</h3>
+                    <p>100M tokens are locked in a Uniswap V3 liquidity pool ensuring smooth trading with low slippage. All swap proceeds stay locked, building trust and foundation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Future Rewards</h3>
+                    <p>Holders can vote on post-burn options or become top performers of community challenges and earn rewards, aligning early involvement with long-term wealth creation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="features fade-up" id="how-it-works">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">How Staterras Works</h2>
+                <p class="section-subtitle">A systematic approach to generating yields through ETH staking and real-world assets</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Raise Funds</h3>
+                    <p>Collect investments through Pre-Terras token sale to build our community-driven investment pool.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fab fa-ethereum"></i>
+                    </div>
+                    <h3>Buy & Stake ETH</h3>
+                    <p>Convert funds to ETH and stake for base yields, creating a solid foundation for returns.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-industry"></i>
+                    </div>
+                    <h3>Apply Leverage</h3>
+                    <p>Use 50% LTV to amplify exposure 1.25-2.5x, maximizing potential returns while managing risk.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <h3>Strategic Allocation</h3>
+                    <p>Deploy across DeFi protocols, hedging strategies, and real-world asset opportunities for diversification.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Generate Returns</h3>
+                    <p>Earn from multiple income streams including staking rewards, rental income, and capital appreciation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Execute Buybacks</h3>
+                    <p>Maintain >$1 NAV through strategic token buybacks, ensuring long-term value for all holders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Token Plans Section -->
+    <section class="pricing fade-up" id="pricing">
+        <div class="pricing-container">
+            <div class="section-header">
+                <h2 class="section-title">Token Phases</h2>
+                <p class="section-subtitle">Choose your level of participation in the Staterras ecosystem</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="plan-name">Start-Era</div>
+                    <div class="plan-price">Phase 1</div>
+                    <div class="plan-period">Community Building</div>
+                    <ul class="plan-features">
+                        <li>Utility token with burns</li>
+                        <li>Community airdrops</li>
+                        <li>Leaderboard rewards</li>
+                        <li>Deflationary mechanics</li>
+                        <li>Early supporter perks</li>
+                    </ul>
+                    <a href="#how-to-buy" class="btn-primary">Get Start-Era</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="plan-name">Pre-Terras</div>
+                    <div class="plan-price">Phase 2</div>
+                    <div class="plan-period">$25M ETH Vault</div>
+                    <ul class="plan-features">
+                        <li>ETH staking rewards</li>
+                        <li>Leveraged strategies</li>
+                        <li>Monthly yield distribution</li>
+                        <li>KYC compliance rewards</li>
+                        <li>Equity conversion options</li>
+                        <li>Real estate exposure</li>
+                    </ul>
+                    <a href="#how-to-buy" class="btn-secondary">Coming Soon</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="plan-name">Terras</div>
+                    <div class="plan-price">Phase 3</div>
+                    <div class="plan-period">Licensed Securities</div>
+                    <ul class="plan-features">
+                        <li>Full regulatory compliance</li>
+                        <li>$100M+ AUM targeting</li>
+                        <li>Multi-jurisdiction licenses</li>
+                        <li>Institutional partnerships</li>
+                        <li>Advanced RWA strategies</li>
+                        <li>Global market access</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section class="features fade-up" id="how-to-buy">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">How to Buy Pre-Terras</h2>
+                <p class="section-subtitle">Follow these simple steps to join the Staterras ecosystem</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Create Wallet</h3>
+                    <p>Download MetaMask or your preferred wallet from app stores. Desktop users can get the Chrome extension from metamask.io.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Get ETH</h3>
+                    <p>Ensure you have ETH in your wallet. Buy directly on MetaMask, transfer from another wallet, or purchase on exchanges.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Visit Uniswap</h3>
+                    <p>Go to app.uniswap.org, connect your wallet, and paste the Pre-Terras contract address to begin swapping.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Swap Tokens</h3>
+                    <p>Exchange ETH for Pre-Terras with 2-5% slippage tolerance. Confirm the transaction when prompted by your wallet.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
                     <h3>Complete KYC</h3>
-                    <p>To receive full benefits and convert to the final Pre-Terras, complete our KYC process through our approved providers. This ensures compliance and unlocks all platform features.</p>
+                    <p>Finish our KYC process through approved providers to unlock full benefits and conversion to final Pre-Terras tokens.</p>
                 </div>
                 
-                <div class="buy-step">
-                    <div class="buy-step-icon">6</div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
                     <h3>Start Earning</h3>
-                    <p>Once you hold Pre-Terras, you'll automatically receive monthly yields from our diversified portfolio of real estate investments and crypto staking rewards directly to your wallet.</p>
+                    <p>Automatically receive monthly yields from diversified real estate investments and crypto staking rewards directly to your wallet.</p>
                 </div>
             </div>
-        </section>
-
-    <!-- FAQ Section (2.6) -->
-    <section id="faq">
-        <h2>FAQs: Your Questions Answered</h2>
-        <div class="faq-item">
-            <div class="faq-question">What makes Pre-Terras unique?</div>
-            <div class="faq-answer">Pre-Terras uniquely combines crypto staking yields with real estate income through a leveraged model, providing dual appreciation and income streams.</div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">What leverage level is used?</div>
-            <div class="faq-answer">We target 1.25x to 2.5x leverage on initial capital using staked crypto as collateral.</div>
+    </section>
+
+    <section class="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <h2 class="section-title">FAQ</h2>
+                <p class="section-subtitle">Quick Answers to Your Questions</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What makes Pre-Terras unique?</h4>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pre-Terras uniquely combines crypto staking yields with real estate income through a leveraged model, providing dual appreciation and income streams.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What leverage level is used?</h4>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We target 1.25x to 2.5x leverage on initial capital using staked crypto as collateral.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What are the risks and how are they mitigated?</h4>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Risks include crypto volatility and real estate market fluctuations. Mitigated through diversification, hedging, NAV resets, and transparent reporting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>When are dividends/yields distributed?</h4>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yields from rentals and staking are distributed monthly via the token directly to wallets.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>How are NAV and capital gains calculated?</h4>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>NAV tracks real estate value (monthly) and crypto treasury (daily), with gains from appreciation in both.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Can I exit anytime?</h4>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Pre-Terras offers liquidity for exits at any time through trading on supported platforms.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">What are the risks and how are they mitigated?</div>
-            <div class="faq-answer">Risks include crypto volatility and real estate market fluctuations. Mitigated through diversification, hedging, NAV resets, and transparent reporting.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">When are dividends/yields distributed?</div>
-            <div class="faq-answer">Yields from rentals and staking are distributed monthly via the token directly to wallets.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">How are NAV and capital gains calculated?</div>
-            <div class="faq-answer">NAV tracks real estate value (monthly) and crypto treasury (daily), with gains from appreciation in both.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Can I exit anytime?</div>
-            <div class="faq-answer">Yes, Pre-Terras offers liquidity for exits at any time through trading on supported platforms.</div>
-        </div>
-        <!-- Simple JS for FAQ toggle -->
-        <script>
-            document.querySelectorAll('.faq-question').forEach(item => {
-                item.addEventListener('click', () => {
-                    const parent = item.parentElement;
-                    parent.classList.toggle('open');
-                });
-            });
-			document.addEventListener('DOMContentLoaded', function() {
-    const video = document.querySelector('.seamless-video');
-    
-    if (video) {
-        // Performance optimization: pause video when not visible
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    video.play().catch(e => {
-                        console.log('Video play failed:', e);
-                    });
-                } else {
-                    video.pause();
-                }
-            });
-        }, { 
-            threshold: 0.3,
-            rootMargin: '100px'
-        });
-
-        observer.observe(video);
-
-        // Ensure video plays on load
-        video.addEventListener('canplay', () => {
-            video.play().catch(e => {
-                console.log('Video autoplay failed:', e);
-                // Fallback: show static gradient background
-                const container = video.closest('.video-container');
-                if (container) {
-                    container.style.background = 'linear-gradient(135deg, #58a6ff 0%, #388bfd 100%)';
-                }
-            });
-        });
-
-        // Error handling
-        video.addEventListener('error', (e) => {
-            console.log('Video error:', e);
-            const container = video.closest('.video-container');
-            if (container) {
-                container.style.background = 'linear-gradient(135deg, #58a6ff 0%, #388bfd 100%)';
-                video.style.display = 'none';
-            }
-        });
-
-        // Preload optimization
-        video.preload = 'metadata';
-        
-        // Mobile detection - hide video on mobile
-        if (window.innerWidth <= 768) {
-            video.style.display = 'none';
-            const container = video.closest('.video-container');
-            if (container) {
-                container.style.background = 'linear-gradient(135deg, #58a6ff 0%, #388bfd 100%)';
-            }
-        }
-    }
-
-				// Smooth scrolling for anchor links
-				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-					anchor.addEventListener('click', function (e) {
-						e.preventDefault();
-						const target = document.querySelector(this.getAttribute('href'));
-						if (target) {
-							target.scrollIntoView({
-								behavior: 'smooth',
-								block: 'start'
-							});
-						}
-					});
-				});
-
-				// Handle window resize
-				let resizeTimer;
-				window.addEventListener('resize', function() {
-					clearTimeout(resizeTimer);
-					resizeTimer = setTimeout(function() {
-						if (video && window.innerWidth <= 768) {
-							video.style.display = 'none';
-							const container = video.closest('.video-container');
-							if (container) {
-								container.style.background = 'linear-gradient(135deg, #58a6ff 0%, #388bfd 100%)';
-							}
-						} else if (video && window.innerWidth > 768) {
-							video.style.display = 'block';
-							const container = video.closest('.video-container');
-							if (container) {
-								container.style.background = 'transparent';
-							}
-						}
-					}, 250);
-				});
-			});
-			
-        </script>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2025 Staterras. All rights reserved.</p>
-        <a href="#">Terms & Conditions</a>
-        <a href="#">KYC & Compliance Policy</a>
-        <a href="#">Privacy & Risk Disclosure</a>
-        <a href="#">Contact Info</a>
-        <div class="social-icons">
-            <a href="#">Telegram</a>
-            <a href="#">Discord</a>
-			<a href ="#">X</a>
-            <!-- Add more social icons as needed -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Whitepaper</a>
+                <span class="footer-separator">•</span>
+                <a href="#">Terms & Conditions</a>
+                <span class="footer-separator">•</span>
+                <a href="#">KYC & Compliance</a>
+                <span class="footer-separator">•</span>
+                <a href="#">Risk Disclosure</a>
+                <span class="footer-separator">•</span>
+                <a href="#">Contact Support</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-medium"></i> Medium
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Staterras. All rights reserved.</p>
+                <p class="footer-credit">Bridging Traditional Finance with DeFi Innovation</p>
+            </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js">
-	</script>
-	<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const section = document.getElementById('benefits');
-  if (!section) return;
 
-  const track = section.querySelector('.sticky-track');
-  const pin = section.querySelector('.sticky-pin');
-  const cards = Array.from(section.querySelectorAll('.sticky-card'));
-  const count = cards.length;
-  if (!track || !pin || count === 0) return;
+    <script>
+        // FAQ Toggle Function
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // If this item wasn't active, open it
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
 
-  const topOffset = 72; // match your fixed header height
-  pin.style.setProperty('--pin-top', topOffset + 'px');
+        // Add scroll animation for FAQ
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-  let cardHeight = 180;
-  let stackShift = 120;
-  let initialOffset = 120;
-  let start = 0;
-  let end = 0;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
 
-  function measure() {
-    cardHeight = cards[0] ? cards[0].offsetHeight : 180;
-    stackShift = Math.round(cardHeight * 0.62);
-    initialOffset = Math.round(cardHeight * 0.95);
-    const vh = window.innerHeight;
-    const trackH = Math.max(vh + (count - 1) * stackShift + 120, vh * 1.2);
-    track.style.height = trackH + 'px';
+            // Add fade-up animation to FAQ items
+            document.querySelectorAll('.faq-item').forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(item);
+            });
+        });
 
-    const trackRect = track.getBoundingClientRect();
-    const trackTopDoc = trackRect.top + window.scrollY;
-    start = trackTopDoc - topOffset;
-    end = trackTopDoc + track.offsetHeight - window.innerHeight + topOffset;
-  }
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
 
-  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        }
 
-  function update() {
-    const scrollY = window.scrollY;
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileMenuClose.addEventListener('click', toggleMobileMenu);
+        mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
 
-    if (scrollY < start) {
-      pin.classList.remove('stuck', 'ended');
-      cards.forEach(c => {
-        c.classList.remove('is-active');
-        c.style.transform = '';
-        c.style.zIndex = '';
-      });
-      pin.style.removeProperty('--overlap');
-      return;
-    }
+        // Close mobile menu when clicking on nav links
+        document.querySelectorAll('.mobile-menu-nav a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
 
-    if (scrollY >= end) {
-      pin.classList.remove('stuck');
-      pin.classList.add('ended');
-      const overlap = Math.round(cardHeight * 0.62);
-      pin.style.setProperty('--overlap', `-${overlap}px`);
-      cards.forEach((card, idx) => {
-        card.classList.add('is-active');
-        card.style.transform = '';
-        card.style.zIndex = 500 + idx;
-      });
-      return;
-    }
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    pin.classList.add('stuck');
-    pin.classList.remove('ended');
+        // Fade in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    const total = Math.max(1, end - start);
-    const progress = clamp((scrollY - start) / total, 0, 1);
-    const activeCount = clamp(Math.floor(progress * (count - 1)) + 1, 1, count);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-    cards.forEach((card, idx) => {
-      if (idx < activeCount) {
-        const upSteps = (activeCount - 1 - idx);
-        const y = - upSteps * stackShift;
-        card.style.transform = `translate(-50%, ${y}px)`;
-        card.classList.add('is-active');
-      } else {
-        card.style.transform = `translate(-50%, ${initialOffset}px)`;
-        card.classList.remove('is-active');
-      }
-      card.style.zIndex = 400 + idx;
-      card.style.pointerEvents = (idx === activeCount - 1) ? 'auto' : 'none';
-    });
-  }
+        document.querySelectorAll('.fade-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
 
-  let ticking = false;
-  function onScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        update();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
+        // Particle animation
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            const particleCount = 50;
 
-  function init() {
-    measure();
-    update();
-  }
-  init();
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', () => { measure(); update(); }, { passive: true });
-  setTimeout(() => { measure(); update(); }, 450);
-});
-</script>
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 4 + 1 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = `rgba(88, 166, 255, ${Math.random() * 0.5 + 0.2})`;
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animation = `float ${Math.random() * 20 + 10}s linear infinite`;
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                container.appendChild(particle);
+            }
+        }
 
+        // Data streams animation
+        function createDataStreams() {
+            const container = document.getElementById('dataStreams');
+            const streamCount = 20;
+
+            for (let i = 0; i < streamCount; i++) {
+                const stream = document.createElement('div');
+                stream.className = 'data-stream';
+                stream.style.position = 'absolute';
+                stream.style.width = '1px';
+                stream.style.height = '100px';
+                stream.style.background = `linear-gradient(to bottom, transparent, rgba(88, 166, 255, ${Math.random() * 0.8 + 0.2}), transparent)`;
+                stream.style.left = Math.random() * 100 + '%';
+                stream.style.top = '-100px';
+                stream.style.animation = `dataStream ${Math.random() * 15 + 10}s linear infinite`;
+                stream.style.animationDelay = Math.random() * 15 + 's';
+                container.appendChild(stream);
+            }
+        }
+
+        // Matrix rain effect
+        function createMatrixRain() {
+            const container = document.getElementById('matrixRain');
+            const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            const columnCount = Math.floor(window.innerWidth / 20);
+
+            for (let i = 0; i < columnCount; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.position = 'absolute';
+                column.style.left = i * 20 + 'px';
+                column.style.top = '-100vh';
+                column.style.color = `rgba(88, 166, 255, ${Math.random() * 0.5 + 0.3})`;
+                column.style.fontSize = '14px';
+                column.style.fontFamily = 'monospace';
+                column.style.whiteSpace = 'pre';
+                column.style.animation = `matrixFall ${Math.random() * 20 + 10}s linear infinite`;
+                column.style.animationDelay = Math.random() * 20 + 's';
+                
+                let text = '';
+                for (let j = 0; j < Math.random() * 20 + 10; j++) {
+                    text += characters.charAt(Math.floor(Math.random() * characters.length)) + '\n';
+                }
+                column.textContent = text;
+                
+                container.appendChild(column);
+            }
+        }
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            }
+
+            @keyframes dataStream {
+                0% { transform: translateY(-100px); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(100vh); opacity: 0; }
+            }
+
+            @keyframes matrixFall {
+                0% { transform: translateY(-100vh); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(100vh); opacity: 0; }
+            }
+
+            @keyframes floatSeamless {
+                0%, 100% {
+                    transform: translateY(0px) rotate(0deg) scale(1);
+                    opacity: 0.6;
+                }
+                33% {
+                    transform: translateY(-20px) rotate(120deg) scale(1.1);
+                    opacity: 0.8;
+                }
+                66% {
+                    transform: translateY(10px) rotate(240deg) scale(0.9);
+                    opacity: 0.7;
+                }
+            }
+
+            @keyframes globalBackgroundShift {
+                0%, 100% { 
+                    opacity: 0.6;
+                    transform: scale(1) translateY(0);
+                }
+                25% { 
+                    opacity: 0.8;
+                    transform: scale(1.02) translateY(-2vh);
+                }
+                50% { 
+                    opacity: 0.7;
+                    transform: scale(0.98) translateY(2vh);
+                }
+                75% { 
+                    opacity: 0.9;
+                    transform: scale(1.01) translateY(-1vh);
+                }
+            }
+
+            @keyframes floatParticles {
+                0% {
+                    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+                }
+                100% {
+                    background-position: 100% 100%, -100% 100%, 100% -100%, -100% -100%;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            createDataStreams();
+            createMatrixRain();
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message
+            alert('Thank you for your interest in Staterras! We will contact you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
 </body>
 </html>
