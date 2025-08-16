@@ -1611,6 +1611,23 @@
     letter-spacing: 1.5px;
     clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
   }
+  .pricing-card.featured::before {
+            content: 'AVAILABLE NOW';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink));
+            color: var(--darker-bg);
+            padding: 0.5rem 2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+        }
 }
 
 /* 📱 Mobile adjustments */
@@ -1624,6 +1641,24 @@
     text-align: center;
     clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
   }
+  .pricing-card.featured::before {
+            content: 'AVAILABLE NOW';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink));
+            color: var(--darker-bg);
+            padding: 0.5rem 2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+        }
+
 }
 
         /* Reduced motion for accessibility */
