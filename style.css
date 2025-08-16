@@ -1414,13 +1414,8 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .mobile-menu-button {
-    position: relative;       /* keep it in flow */
-    display: block !important;
-    margin: 0;                /* reset margins */
-    padding: 0.5rem;          /* safe touch area */
-    max-width: 50px;          /* prevent it from stretching */
-    overflow: hidden;         /* stop overflow */
-}
+                display: block !important;
+            }
             
             .nav-links {
                 display: none;
@@ -1489,13 +1484,9 @@
 
         @media (max-width: 480px) {
             .mobile-menu {
-    position: relative;       /* keep it in flow */
-    display: block !important;
-    margin: 0;                /* reset margins */
-    padding: 0.5rem;          /* safe touch area */
-    max-width: 50px;          /* prevent it from stretching */
-    overflow: hidden;         /* stop overflow */
-}
+                width: auto;
+                max-width: 100%;
+            }
             
             .mobile-menu-header {
                 padding: 1.5rem;
