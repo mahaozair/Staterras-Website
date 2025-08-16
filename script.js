@@ -1,9 +1,5 @@
 /*
 
-TemplateMo 594 nexus flow
-
-https://templatemo.com/tm-594-nexus-flow
-
 */
 
 // JavaScript Document
