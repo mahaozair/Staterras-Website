@@ -598,7 +598,7 @@ nav {
 }
 
 .mobile-menu-logo::before {
-    content: '>';
+    content: '';
     margin-right: 0.5rem;
     color: var(--primary-orange);
     transition: all 0.3s ease;
@@ -692,7 +692,7 @@ nav {
 }
 
 .mobile-menu-nav a::before {
-    content: '>';
+    content: '';
     position: absolute;
     left: 2rem;
     opacity: 0;
@@ -2410,7 +2410,7 @@ nav {
         }
 
         .mobile-menu-logo::before {
-            content: '>';
+            content: '';
             margin-right: 0.5rem;
             color: var(--primary-orange);
             transition: all 0.3s ease;
@@ -2488,7 +2488,7 @@ nav {
         }
 
         .mobile-menu-nav a::before {
-            content: '>';
+            content: '';
             position: absolute;
             left: 2rem;
             opacity: 0;
@@ -2604,7 +2604,7 @@ nav {
         }
 
         .logo::before {
-            content: '>';
+            content: '';
             margin-right: 0.5rem;
             color: var(--primary-orange);
             transition: all 0.3s ease;
