@@ -326,12 +326,16 @@
 
         /* Mobile Menu Button */
         .mobile-menu-button {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-cyan);
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: relative;
             width: 30px;
             height: 30px;
+            transition: all 0.3s ease;
         }
 
         .mobile-menu-button:hover {
@@ -391,14 +395,23 @@
         }
 
         /* Mobile Menu */
-        .mobile-menu-button {
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 30px;
-        height: 30px;
-    }
+        .mobile-menu {
+            position: fixed;
+            top: 78px;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: calc(100vh - 78px);
+            background: var(--darker-bg);
+            backdrop-filter: blur(20px);
+            border-left: 2px solid var(--border-color);
+            z-index: 9999;
+            transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow-y: auto;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
 
         .mobile-menu.active {
             right: 0;
@@ -1401,8 +1414,13 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .mobile-menu-button {
-                display: block !important;
-            }
+    position: relative;       /* keep it in flow */
+    display: block !important;
+    margin: 0;                /* reset margins */
+    padding: 0.5rem;          /* safe touch area */
+    max-width: 50px;          /* prevent it from stretching */
+    overflow: hidden;         /* stop overflow */
+}
             
             .nav-links {
                 display: none;
@@ -1471,9 +1489,13 @@
 
         @media (max-width: 480px) {
             .mobile-menu {
-                width: auto;
-                max-width: 100%;
-            }
+    position: relative;       /* keep it in flow */
+    display: block !important;
+    margin: 0;                /* reset margins */
+    padding: 0.5rem;          /* safe touch area */
+    max-width: 50px;          /* prevent it from stretching */
+    overflow: hidden;         /* stop overflow */
+}
             
             .mobile-menu-header {
                 padding: 1.5rem;
@@ -1591,9 +1613,6 @@
         }
 
         @media (max-width: 768px) {
-            nav {
-        padding: 1rem;
-    }
   .btn-primary,
   .btn-secondary {
     padding: 1rem 2rem;
@@ -1608,25 +1627,10 @@
     top: -10px;                     /* pull closer to card */
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
   }
-    .cyber-button {
-        display: inline-block;
-        background: none;
-        box-shadow: none;
-        clip-path: none;
-        padding: 1rem 2rem;
-        color: var(--primary-cyan);
-        font-size: 1rem;
-        text-transform: uppercase;
-        text-align: left;
-        width: 100%;
-    }
 }
 
 /* 📱 Mobile adjustments */
 @media (max-width: 480px) {
-    nav {
-        padding: 1rem;
-    }
   .btn-primary,
   .btn-secondary {
     width: 100%;              /* Make buttons full width for mobile */
@@ -1643,18 +1647,6 @@
     top: -8px;                      /* closer to top edge */
     clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
   }
-   .cyber-button {
-        display: inline-block;
-        background: none;
-        box-shadow: none;
-        clip-path: none;
-        padding: 1rem 2rem;
-        color: var(--primary-cyan);
-        font-size: 1rem;
-        text-transform: uppercase;
-        text-align: left;
-        width: 100%;
-    }
 
 }
 
