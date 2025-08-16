@@ -32,6 +32,12 @@ body {
     overflow-x: hidden;
 }
 
+html,body{
+    max-width: 100%;
+    overflow-x: hidden;
+
+}
+
 body.menu-open {
     overflow: hidden;
 }
