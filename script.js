@@ -126,6 +126,51 @@
                 });
             }
         }
+        /* ------------------------------
+   FAQ Toggle
+------------------------------ */
+function toggleFAQ(button) {
+    const faqItem = button.parentElement;
+    const isActive = faqItem.classList.contains('active');
+
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // If this item wasn't active, open it
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+
+/* ------------------------------
+   FAQ Scroll Animation
+------------------------------ */
+document.addEventListener('DOMContentLoaded', function () {
+    const faqObserverOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const faqObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, faqObserverOptions);
+
+    // Add fade-up animation to FAQ items
+    document.querySelectorAll('.faq-item').forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(50px)';
+        item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        faqObserver.observe(item);
+    });
+});
+
 
         // Initialize mobile menu when DOM is ready
         if (document.readyState === 'loading') {
