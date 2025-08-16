@@ -1603,6 +1603,29 @@
             }
         }
 
+        @media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
+  }
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;              /* Make buttons full width for mobile */
+    padding: 0.9rem 1.2rem;   /* Reduce padding */
+    font-size: 0.85rem;       /* Slightly smaller text */
+    letter-spacing: 1px;
+    text-align: center;
+    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+  }
+}
+
         /* Reduced motion for accessibility */
         @media (prefers-reduced-motion: reduce) {
             .cyber-gradient,
