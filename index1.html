@@ -1,382 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>Staterras</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Staterras</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-       
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #000;
-            overflow-x: hidden;
-            color: white;
-        }
-        
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            overflow: hidden;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #000;
+      overflow-x: hidden;
+      color: white;
+    }
 
-        .video-background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
 
-        .video-background video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
+    .video-background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
 
-        .fallback-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-        }
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    .fallback-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
 
-        .container {
-            position: relative;
-            z-index: 10;
-            min-height: 100vh;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            max-width: 60%;
-        }
+    .container {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 90%;
+      margin: 0 auto;
+    }
 
-        .hero-section {
-            text-align: left;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out;
-        }
+    .hero-section {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
 
-        .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 500;
-            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #cccccc 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-            margin-bottom: 0.5rem;
-            letter-spacing: -2px;
-        }
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 500;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #cccccc 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      margin-bottom: 0.5rem;
+      letter-spacing: -2px;
+    }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-        }
+    .hero-caption {
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
 
-        .hero-caption {
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 600px;
-            margin: 0;
-            line-height: 1.5;
-        }
+    /* ✅ Grid for 5 cards */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
 
-        .cards-container {
-            display: flex;
-            flex-direction: row;
-            gap: 1.5rem;
-            max-width: 700px;
-            width: 100%;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
+    .card {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 250px;
+      gap: 1rem;
+      position: relative;
+    }
 
-        .card {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: left;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 500px;
-            gap: 1.5rem;
-        }
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+                  0 0 40px rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.05);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            border-radius: 20px;
-        }
+    .card.available {
+      background: rgba(0, 7, 20, 0.4);
+      border-color: rgba(100, 159, 255, 0.2);
+    }
 
-        .card:hover::before {
-            opacity: 1;
-        }
+    .card.locked {
+      padding-bottom: 3.5rem;
+    }
 
-        .card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
+    .coming-soon {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      white-space: nowrap;
+    }
 
-        .card.available {
-            background: rgba(0, 7, 20, 0.4);
-            border-color: rgba(100, 159, 255, 0.2);
-        }
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: #00ccff;
+      color: white;
+    }
 
-        .card.available:hover {
-            background: rgba(0, 7, 20, 0.4);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(100, 159, 255, 0.2);
-        }
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
 
-        .card.locked {
-    padding-bottom: 3.5rem; /* space for coming soon badge */
-    position: relative; /* ensure badge positions relative to card */
-}
+    .card-description {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.4;
+      font-size: 0.9rem;
+    }
 
-.coming-soon {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: rgba(255, 255, 255, 0.8);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    white-space: nowrap;
-}
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
 
-        .card.locked:hover {
-            transform: translateY(-3px) scale(1.01);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
 
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
-            flex-shrink: 0;
-        }
-
-        .card.available .card-icon {
-            /* background: linear-gradient(135deg, #423c75, #423c75); */
-            background:#00ccff ;
-            color: white;
-            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
-        }
-
-        .card.locked .card-icon {
-            background: linear-gradient(135deg, #4b5563, #374151);
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .card-content {
-            flex: 1;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .card.available .card-title {
-            color: #00ccff;
-        }
-
-        .card.locked .card-title {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .card-description {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
-            margin-bottom: 2px;
-        }
-
-        .card.locked .card-description {
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        .lock-icon{
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            width: 30px;
-            height: 30px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.7);
-            z-index: 3;
-        }
-
-        /* .coming-soon {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        } */
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                max-width: 90%;
-                padding: 1rem;
-            }
-            
-            .hero-section {
-                margin-bottom: 2rem;
-            }
-
-            .cards-container {
-                max-width: 100%;
-            }
-
-            .card {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            .card-content {
-                text-align: center;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="video-background">
-        <div class="fallback-bg"></div>
-        <video autoplay muted loop playsinline id="bgVideo" style="opacity: 1;" preload="auto">
-            <source src="space-exploration-small.mp4" type="video/mp4">
-            <!-- <source src="https://mahaozair.github.io/Staterras-Website/space-exploration.mp4" type="media/mp4"> -->
+  <div class="video-background">
+    <div class="fallback-bg"></div>
+    <video autoplay muted loop playsinline id="bgVideo" style="opacity: 1;" preload="auto">
+      <source src="new-vid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-            <!-- <source src="vecteezy_abstract-background-with-rotation-of-light-earth-globe_2274493.mp4" type="video/mp4"> -->
-            Your browser does not support the video tag.
-        </video>
+  <div class="container">
+    <div class="hero-section">
+      <h1 class="hero-title">STATERRAS</h1>
+      <p class="hero-caption">Merging DeFi Agility with RWA Stability - Transparent, Compliant, ETH-Backed Investments.</p>
     </div>
 
-    <div class="container">
-        <div class="hero-section">
-            <h1 class="hero-title">STATERRAS</h1>
-            <p class="hero-caption">Merging DeFi Agility with RWA Stability - Transparent, Compliant, ETH-Backed Investments.</p>
+    <!-- ✅ Five cards -->
+    <div class="cards-container">
+      <div class="card available pulse" onclick="window.open('https://example.com', '_blank')">
+        <div class="card-icon">SE</div>
+        <div class="card-content">
+          <h3 class="card-title">Start Eras</h3>
+          <p class="card-description">Begin your journey through the cosmic frontier. Explore infinite galaxies and discover what lies beyond the stars.</p>
         </div>
+      </div>
 
-        <div class="cards-container">
-            <div class="card available pulse" onclick="redirectToStarterras()">
-                <div class="card-icon">SE</div>
-                <div class="card-content">
-                    <h3 class="card-title">Start Era</h3>
-                    <p class="card-description">Begin your journey through the cosmic frontier. Explore infinite galaxies and discover what lies beyond the stars.</p>
-                </div>
-            </div>
-
-            <div class="card locked">
-                <div class="card-icon">PT</div>
-                <div class="card-content">
-                    <h3 class="card-title">PreTerras</h3>
-                    <p class="card-description">The foundational realm where all adventures begin. Prepare for what's to come in this primordial space.</p>
-                </div>
-                <div class="coming-soon">Coming Soon</div>
-            </div>
-
-            <div class="card locked">
-                <div class="card-icon">T</div>
-                <div class="card-content">
-                    <h3 class="card-title">Terras</h3>
-                    <p class="card-description">The ultimate destination. A world beyond imagination where all possibilities converge into reality.                          </p>
-                </div>
-                <div class="coming-soon">Coming Soon</div>
-            </div>
+      <div class="card locked">
+        <div class="card-icon">PT</div>
+        <div class="card-content">
+          <h3 class="card-title">Pre Terras</h3>
+          <p class="card-description">The foundational realm where all adventures begin. Prepare for what's to come in this primordial space.</p>
         </div>
+        <div class="coming-soon">Coming Soon</div>
+      </div>
+
+      <div class="card locked">
+        <div class="card-icon">T</div>
+        <div class="card-content">
+          <h3 class="card-title">Terras</h3>
+          <p class="card-description">The ultimate destination. A world beyond imagination where all possibilities converge into reality.</p>
+        </div>
+        <div class="coming-soon">Coming Soon</div>
+      </div>
+
+      <div class="card locked">
+        <div class="card-icon">PS</div>
+        <div class="card-content">
+          <h3 class="card-title">Pre Staterras</h3>
+          <p class="card-description">An exclusive early gateway into the Staterras ecosystem. A limited entry into what’s about to unfold.</p>
+        </div>
+        <div class="coming-soon">Coming Soon</div>
+      </div>
+
+      <div class="card locked">
+        <div class="card-icon">SS</div>
+        <div class="card-content">
+          <h3 class="card-title">Staterras</h3>
+          <p class="card-description">The fully realized world of Staterras, where DeFi agility meets RWA stability in one thriving ecosystem.</p>
+        </div>
+        <div class="coming-soon">Coming Soon</div>
+      </div>
     </div>
+  </div>
+
     
     <script>
         function redirectToStarterras() {
