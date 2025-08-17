@@ -291,88 +291,113 @@
         </div>
     </section>
 
-    <section class="faq">
-        <div class="faq-container">
-            <div class="section-header">
-                <h2 class="section-title">FAQ</h2>
-                <p class="section-subtitle">Quick Answers to Your Questions</p>
+<section class="faq">
+    <div class="faq-container">
+        <div class="section-header">
+            <h2 class="section-title">FAQ</h2>
+            <p class="section-subtitle">Quick Answers to Your Questions</p>
+        </div>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>What is the Start-Era Token?</h4>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="faq-answer">
+                    <p>The Start-Era Token is a 100 million (100M) supply ERC-20 utility token on the Ethereum blockchain, launched to build the Staterras community.</p>
+                </div>
             </div>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <h4>What makes Start-Era unique?</h4>
-                        <div class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Pre-Valora uniquely combines crypto staking yields with real estate income through a leveraged model, providing dual appreciation and income streams.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <h4>What leverage level is used?</h4>
-                        <div class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We target 1.25x to 2.5x leverage on initial capital using staked crypto as collateral.</p>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>What happens after 50M tokens are burned?</h4>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                </button>
+                <div class="faq-answer">
+                    <p>Holders vote on options: (1) Exchange remaining Start-Era tokens for Pre-Valora tokens of equal value; (2) Continue buy-back/burn until 75M burned; or (3) A custom proposal if 51% vote for it. Voting is one token = one vote, based on majority of participants.</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <h4>What are the risks and how are they mitigated?</h4>
-                        <div class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Risks include crypto volatility and real estate market fluctuations. Mitigated through diversification, hedging, NAV resets, and transparent reporting.</p>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Is the Start-Era Token a security or investment?</h4>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                </button>
+                <div class="faq-answer">
+                    <p>No, it's strictly a utility token for community participation, engagement, and rewards. It offers no equity, profit-sharing, or guaranteed returns.</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <h4>When are dividends/yields distributed?</h4>
-                        <div class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yields from rentals and staking are distributed monthly via the token directly to wallets.</p>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>What risks are involved?</h4>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                </button>
+                <div class="faq-answer">
+                    <p>Risks include market volatility, no value guarantees, regulatory changes, and technological issues. No guaranteed burns or transitions.</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <h4>How are NAV and capital gains calculated?</h4>
-                        <div class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="faq-answer">
-                        <p>NAV tracks real estate value (monthly) and crypto treasury (daily), with gains from appreciation in both.</p>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>How long does Phase 1 last?</h4>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                </button>
+                <div class="faq-answer">
+                    <p>It ends when community goals are met (e.g., healthy volume and engagement), triggering Phase 2. No fixed timeline, but it's the foundation stage.</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <h4>Can I exit anytime?</h4>
-                        <div class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, Pre-Valora offers liquidity for exits at any time through trading on supported platforms.</p>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>How does it transition to later phases?</h4>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                </button>
+                <div class="faq-answer">
+                    <p>After burns and voting, holders can exchange for Pre-Valora (Phase 2 utility token) if chosen, maintaining value continuity.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>On-Chain Transparency and ETH-Centric Treasury</h4>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="faq-answer">
+                    <p>All funds (100% in ETH, staked as stETH) are on-chain verifiable, with NAV disclosures and locked principals (only staking yields used for costs). This contrasts with opaque projects where funds vanish.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Contributor Rewards and Governance Alignment</h4>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="faq-answer">
+                    <p>Top ecosystem builders (e.g., via impressions, partnerships) get Pre-Staterras for potential equity conversion, ensuring interests align with long-term growth—not just early dumps like in many ICOs.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">
